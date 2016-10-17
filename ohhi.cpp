@@ -4,8 +4,8 @@
  * EECS 183
  * Project 3: 0h h1
  *
- * <#Name(s)#>
- * <#uniqname(s)#>
+ * <Elizabeth Batista, Alexander Arts>
+ * <alexarts>
  *
  * <#A description of the project here#>
  */
@@ -20,8 +20,19 @@
 ///////////////////////////////////////
 
 int count_unknown_squares(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
-    return 0;
+    int unknown_count = 0;
+
+    for (int row = 0; row <= size; row++)
+    {
+        for (int col = 0; col <= size; col++)
+        {
+            if (board[row][col] != RED || BLUE)
+            {
+                unknown_count++;
+            }
+        }
+    }
+    return unknown_count;
 }
 
 
@@ -32,17 +43,49 @@ int count_unknown_squares(const int board[MAX_SIZE][MAX_SIZE], int size) {
 bool row_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
                                 int size,
                                 int row,
-                                int color) {
-    // your code here
-    return false;
+                                int color)
+{
+    for (int k = 0; (k + 2) < MAX_SIZE; k++)
+    {
+        if (board[row][k] == board[row][k + 1] && board[row][k + 1] == board[row][k + 2])
+        {
+            if (board[row][k] == color)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+
+    return true;
+//    return false;
 }
 
 bool col_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
                                 int size,
                                 int col,
-                                int color) {
-    // your code here
-    return false;
+                                int color)
+{
+    for (int k = 0; (k + 2) < MAX_SIZE; k++)
+    {
+        if (board[k][col] == board[k + 1][col] && board[k + 1][col] == board[k + 2][col])
+        {
+            if (board[k][col] == color)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+
+    return true;
+    //return false;
 }
 
 bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size) {
