@@ -43,22 +43,73 @@ int count_unknown_squares(const int board[MAX_SIZE][MAX_SIZE], int size) {
 bool row_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
                                 int size,
                                 int row,
-                                int color) {
-    // your code here
-    return false;
+                                int color)
+{
+    for (int k = 0; (k + 2) < MAX_SIZE; k++)
+    {
+        if (board[row][k] == board[row][k + 1] && board[row][k + 1] == board[row][k + 2])
+        {
+            if (board[row][k] == color)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+
+    return true;
+//    return false;
 }
 
 bool col_has_no_threes_of_color(const int board[MAX_SIZE][MAX_SIZE],
                                 int size,
                                 int col,
-                                int color) {
-    // your code here
-    return false;
+                                int color)
+{
+    for (int k = 0; (k + 2) < MAX_SIZE; k++)
+    {
+        if (board[k][col] == board[k + 1][col] && board[k + 1][col] == board[k + 2][col])
+        {
+            if (board[k][col] == color)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+    }
+
+    return true;
+    //return false;
 }
 
-bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
-    return false;
+bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        if (row_has_no_threes_of_color(board[MAX_SIZE][MAX_SIZE], size, i, 1) && col_has_no_threes_of_color(board[MAX_SIZE][MAX_SIZE], size, i, 1))
+        {
+            if (row_has_no_threes_of_color(board[MAX_SIZE][MAX_SIZE], size, i, 2) && col_has_no_threes_of_color(board[MAX_SIZE][MAX_SIZE], size, i, 2))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return false;
+        }
+
+    }
+    //return false;
 }
 
 bool rows_are_different(const int board[MAX_SIZE][MAX_SIZE],
