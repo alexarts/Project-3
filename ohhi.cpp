@@ -111,11 +111,6 @@ bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size)
 
     }
     //return false;
-=======
-bool board_has_no_threes(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
-    return false;
->>>>>>> (row/column)_has_no_threes_of_color()
 }
 
 bool rows_are_different(const int board[MAX_SIZE][MAX_SIZE],
