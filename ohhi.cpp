@@ -5,7 +5,7 @@
  * Project 3: 0h h1
  *
  * <Elizabeth Batista, Alexander Arts>
- * <alexarts>
+ * <ellazar, alexarts>
  *
  * <#A description of the project here#>
  */
