@@ -133,7 +133,7 @@ bool rows_are_different(const int board[MAX_SIZE][MAX_SIZE],
         return false;
     }
 
-    return false;
+    //return false;
 }
 
 bool cols_are_different(const int board[MAX_SIZE][MAX_SIZE],
