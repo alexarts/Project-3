@@ -163,8 +163,18 @@ bool cols_are_different(const int board[MAX_SIZE][MAX_SIZE],
 }
 
 bool board_has_no_duplicates(const int board[MAX_SIZE][MAX_SIZE], int size) {
-    // your code here
-    return false;
+    for (int i = 0; i < size - 1; i++)
+    {
+        for (int j = i + 1; j < size; j++)
+        {
+            if (!rows_are_different(board[MAX_SIZE][MAX_SIZE], size, i, j) || !cols_are_different(board[MAX_SIZE][MAX_SIZE], size, i, j))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+    //return false;
 }
 
 
